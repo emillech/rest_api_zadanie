@@ -6,7 +6,7 @@ class Book(models.Model):
     author = models.ManyToManyField("Author", through="BookAuthor")
     publisher = models.ForeignKey("Publisher", on_delete=models.CASCADE)
     pages_num = models.IntegerField()
-    cover_image = models.ImageField()
+    cover_image = models.ImageField(upload_to='images')
 
     def __str__(self):
         return self.title
