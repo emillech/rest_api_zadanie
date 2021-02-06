@@ -1,6 +1,6 @@
 from .models import Book
 from .serializers import BookSerializer, BookDetailsSerializer
-from rest_framework import generics, viewsets
+from rest_framework import viewsets
 
 
 class BooksListView(viewsets.ModelViewSet):
