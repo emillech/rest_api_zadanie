@@ -1,5 +1,6 @@
-from books.views import BooksListView
+from books.views import BooksViewSet, PublisherViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register('', BooksListView)
+router.register('book', BooksViewSet)
+router.register('publisher', PublisherViewSet)

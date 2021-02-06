@@ -1,9 +1,9 @@
-from .models import Book
-from .serializers import BookSerializer, BookDetailsSerializer
+from .models import Book, Publisher
+from .serializers import BookSerializer, BookDetailsSerializer, PublisherSerializer
 from rest_framework import viewsets
 
 
-class BooksListView(viewsets.ModelViewSet):
+class BooksViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
 
     def get_serializer_class(self):
@@ -12,4 +12,6 @@ class BooksListView(viewsets.ModelViewSet):
         return BookDetailsSerializer
 
 
-
+class PublisherViewSet(viewsets.ModelViewSet):
+    queryset = Publisher.objects.all()
+    serializer_class = PublisherSerializer
