@@ -8,9 +8,15 @@ class Book(models.Model):
     pages_num = models.IntegerField()
     cover_image = models.ImageField()
 
+    def __str__(self):
+        return self.title
+
 
 class Publisher(models.Model):
     name = models.CharField(max_length=64)
+
+    def __str__(self):
+        return self.name
 
 
 class Author(models.Model):
@@ -18,6 +24,9 @@ class Author(models.Model):
     last_name = models.CharField(max_length=32)
     nickname = models.CharField(max_length=32)
     birth_date = models.DateField()
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
 
 
 class BookAuthor(models.Model):
