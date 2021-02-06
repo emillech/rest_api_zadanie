@@ -3,8 +3,8 @@ from .models import Author, Book, Publisher
 
 
 class BookSerializer(serializers.Serializer):
-    author = serializers.SlugRelatedField(many=True)
-    publisher = serializers.SlugRelatedField()
+    author = serializers.SlugRelatedField(many=True, slug_field='nickname', queryset=Author.objects.all())
+    publisher = serializers.SlugRelatedField(slug_field='name', queryset=Publisher.objects.all())
 
     class Meta:
         model = Book
